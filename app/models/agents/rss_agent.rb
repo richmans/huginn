@@ -69,7 +69,8 @@ module Agents
     def check
       response = faraday.get(interpolated['url'])
       if response.success?
-        feed = FeedNormalizer::FeedNormalizer.parse(response.body)
+	body = response.body.encode('UTF-8', 'binary', :invalid => :replace, :undef => :replace, :replace => '')
+        feed = FeedNormalizer::FeedNormalizer.parse(body)
         feed.clean! if interpolated['clean'] == 'true'
         created_event_count = 0
         feed.entries.each do |entry|
