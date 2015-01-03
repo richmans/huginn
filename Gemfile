@@ -123,7 +123,7 @@ gem 'tzinfo', '>= 1.2.0'	# required by rails; 1.2.0 has support for *BSD and Sol
 # This hack needs some explanation.  When on Heroku, use the pg, unicorn, and rails12factor gems.
 # When not on Heroku, we still want our Gemfile.lock to include these gems, so we scope them to
 # an unsupported platform.
-if ENV['ON_HEROKU'] || ENV['HEROKU_POSTGRESQL_ROSE_URL'] || File.read(File.join(File.dirname(__FILE__), 'Procfile')) =~ /intended for Heroku/
+if ENV['ON_HEROKU'] || ENV['HEROKU_POSTGRESQL_ROSE_URL'] || ENV['HEROKU_POSTGRESQL_GOLD_URL'] || File.read(File.join(File.dirname(__FILE__), 'Procfile')) =~ /intended for Heroku/
   gem 'pg'
   gem 'unicorn'
   gem 'rails_12factor', group: :production
