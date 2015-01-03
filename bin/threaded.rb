@@ -3,7 +3,9 @@ require 'huginn_scheduler'
 
 STDOUT.sync = true
 STDERR.sync = true
-
+File.open("/tmp/huginn.pid", "w") do |pidfile|
+  pidfile.write Process.pid
+end
 def stop
   puts 'Exiting...'
   @scheduler.stop
