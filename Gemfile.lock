@@ -450,7 +450,6 @@ DEPENDENCIES
   better_errors (~> 1.1)
   binding_of_caller
   bootstrap-kaminari-views (~> 0.0.3)
-  bundler (>= 1.5.0)
   cantino-twitter-stream!
   coffee-rails (~> 4.0.0)
   coveralls
@@ -524,7 +523,6 @@ DEPENDENCIES
   twitter (~> 5.8.0)
   typhoeus (~> 0.6.3)
   tzinfo (>= 1.2.0)
-  tzinfo-data
   uglifier (>= 1.3.0)
   unicorn
   vcr
