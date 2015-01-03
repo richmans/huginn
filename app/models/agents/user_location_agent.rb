@@ -51,9 +51,9 @@ module Agents
 
     def receive_web_request(params, method, format)
       params = params.symbolize_keys
-      if method != 'post'
-        return ['Not Found', 404]
-      end
+      #if method != 'post'
+      #  return ['Not Found', 404]
+      #end
       if interpolated['secret'] != params[:secret]
         return ['Not Authorized', 401]
       end
