@@ -19,7 +19,7 @@ class Location
         case key.to_sym
         when :lat, :latitude
           self.lat = value
-        when :lng, :longitude
+        when :lng, :longitude, :lon
           self.lng = value
         when :radius
           self.radius = value
